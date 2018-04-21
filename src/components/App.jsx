@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from './Header';
-import Footer from './Footer';
-import KegList from '../keg/KegList';
+import Header from './home/Header';
+import Footer from './home/Footer';
+import KegList from './keg/KegList';
 
 function App(){
   return(

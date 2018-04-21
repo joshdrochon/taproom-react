@@ -8,7 +8,7 @@ const styles={
 function Footer(){
   return(
     <div style={styles.footer} id='footer'>
-      <p>Footer works</p>
+      <p>Footer works!</p>
     </div>
   );
 }
