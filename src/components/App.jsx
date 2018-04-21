@@ -2,11 +2,12 @@ import React from 'react';
 import Header from './home/Header';
 import Footer from './home/Footer';
 import KegList from './keg/KegList';
+import { Switch, Route } from 'react-router-dom';
 
 function App(){
   return(
     <div id='app'>
-      <style jsx>{`
+      <style>{`
           *{
             font-family: helvetica;
             padding: 0px;
@@ -15,7 +16,9 @@ function App(){
         `}
       </style>
       <Header/>
-      <KegList/>
+      <Switch>
+        <Route path = '/allkegs' component={KegList} />
+      </Switch>
       <Footer/>
     </div>
   );

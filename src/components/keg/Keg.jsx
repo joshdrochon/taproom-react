@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 function Keg(props){
   return(
@@ -9,12 +8,6 @@ function Keg(props){
       <p>Price: {props.price}</p>
     </div>
   );
-}
-
-Keg.proptypes = {
-  name: PropTypes.string.isRequired,
-  size: PropTypes.string.isRequired,
-  price: PropTypes.string.isRequired
 }
 
 export default Keg;

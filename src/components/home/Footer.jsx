@@ -1,13 +1,17 @@
 import React from 'react';
 
 const styles={
-  footer: {
-    backgroundColor: 'dodgerblue'
-  }
+  backgroundColor: '#F0EDE5',
+  position: 'fixed',
+  bottom: '0',
+  left: '0',
+  width: '100%',
+  lineHeight: '50px',
+  textAlign: 'center'
 }
 function Footer(){
   return(
-    <div style={styles.footer} id='footer'>
+    <div style={styles} id='footer'>
       <p>Footer works!</p>
     </div>
   );
