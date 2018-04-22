@@ -1,4 +1,11 @@
 import React from 'react';
+import $ from 'jquery';
+
+$(document).ready(function(){
+  $('#test').click(function (){
+      console.log("Hey, that's kind of strange");
+    });
+  });
 
 const styles = {
   backgroundColor: '#C48F65',
@@ -13,7 +20,7 @@ const styles = {
 function Footer(){
   return(
     <div style={styles} id='footer'>
-      <p>Copyright &copy; 2018 Josh Rochon</p>
+      <p id='test'>Copyright &copy; 2018 Josh Rochon</p>
     </div>
   );
 }
