@@ -1,13 +1,14 @@
+import { Switch, Route } from 'react-router-dom';
+
 import React from 'react';
 import Header from './home/Header';
 import Footer from './home/Footer';
 import KegList from './keg/KegList';
-import { Switch, Route } from 'react-router-dom';
 
 function App(){
   return(
     <div id='app'>
-      <style>{`
+      <style jsx global>{`
           *{
             font-family: helvetica;
             padding: 0px;

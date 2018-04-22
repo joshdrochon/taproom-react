@@ -1,19 +1,28 @@
 import { Link } from 'react-router-dom';
+import tapHandles from '../../assets/images/taphandles.jpg';
+
 
 import React from 'react';
 
 const styles = {
-  backgroundColor: '#C0AB8E',
-  width: '100%',
-  lineHeight: '80px',
-  textAlign: 'center'
+  header: {
+    width: '100%',
+    height: '400px',
+    textAlign: 'center',
+    backgroundImage: `url(${tapHandles})`,
+    backgroundSize: 'cover'
+  },
+  link: {
+    color: 'white',
+    textDecoration: 'none',
+    fontSize: '16px'
+  }
 }
 
 function Header(){
   return(
-    <div style={styles} id='header'>
-      <p>Header works!</p>
-      <p><Link to='/allkegs'>All Kegs</Link></p>
+    <div style={styles.header} id='header'>
+      <Link style={styles.link} to='/allkegs'>All Kegs</Link>
     </div>
   );
 }
