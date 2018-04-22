@@ -2,7 +2,9 @@ import { Switch, Route } from 'react-router-dom';
 
 import React from 'react';
 import Header from './home/Header';
-import Summary from './home/Summary';
+import Story from './home/Story';
+import Slogan from './home/Slogan';
+import Content from './home/Content';
 import Footer from './home/Footer';
 import KegList from './keg/KegList';
 
@@ -21,7 +23,9 @@ function App(){
         `}
       </style>
       <Header/>
-      <Summary/>
+      <Story/>
+      <Slogan/>
+      <Content/>
       <Switch>
         <Route path='/allkegs' component={KegList} />
       </Switch>

@@ -5,8 +5,9 @@ const styles = {
   bottom: '0',
   left: '0',
   width: '100%',
-  lineHeight: '50px',
-  textAlign: 'center'
+  lineHeight: '30px',
+  textAlign: 'center',
+  position: 'fixed'
 }
 
 function Footer(){
