@@ -14,11 +14,14 @@ function App(){
             padding: 0px;
             margin: 0px;
           }
+          body{
+            background-color: #F0EDE5;
+          }
         `}
       </style>
       <Header/>
       <Switch>
-        <Route path = '/allkegs' component={KegList} />
+        <Route path='/allkegs' component={KegList} />
       </Switch>
       <Footer/>
     </div>
