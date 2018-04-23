@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const styles = {
   list: {
@@ -22,5 +23,11 @@ function Keg(props){
     </div>
   );
 }
+
+Keg.propTypes = {
+  name: PropTypes.string.isRequired,
+  size: PropTypes.string.isRequired,
+  price: PropTypes.string
+};
 
 export default Keg;

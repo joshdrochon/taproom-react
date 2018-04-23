@@ -27,7 +27,7 @@ function App(){
       <Slogan/>
       <Content/>
       <Switch>
-        <Route path='/allkegs' component={KegList} />
+        <Route exact path='/allkegs' component={KegList} />
       </Switch>
       <Footer/>
     </div>

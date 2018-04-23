@@ -39,8 +39,11 @@ function Header(){
             grid-template-columns: repeat(5, 1fr);
             width: 100%;
             height: 70px;
-            background-color: #92B6D5;
+            background-color: #4C6A92;
             text-align: center;
+          }
+          #navbar:hover{
+            cursor: pointer;
           }
           #navbar div{
             width: 100%;
@@ -48,8 +51,7 @@ function Header(){
             margin: auto;
           }
           #navbar div:hover{
-            background-color: #4C6A92;
-            cursor: pointer;
+            background-color: #6f87a7;
           }
           #navbar a{
             color: white;
@@ -61,7 +63,6 @@ function Header(){
             top: 0;
             z-index: 100;
             position: fixed;
-            width: 100%;
           }
           .margin-correct{
             margin-bottom: 70px;
@@ -74,7 +75,7 @@ function Header(){
         <div><Link to='/allkegs'>Brewer's List</Link></div>
         <div><a href='#'>Tap Room</a></div>
         <div><a href='#'>Blog</a></div>
-        <div><a href='#'>Menu</a></div>
+        <div><a href='#'>Contact</a></div>
       </div>
     </div>
 
