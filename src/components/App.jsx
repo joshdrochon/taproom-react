@@ -1,16 +1,15 @@
 import { Switch, Route } from 'react-router-dom';
-
-import React from 'react';
+import LandingPage from './LandingPage';
 import Header from './home/Header';
-import Story from './home/Story';
-import Slogan from './home/Slogan';
-import Content from './home/Content';
 import Footer from './home/Footer';
 import KegList from './keg/KegList';
 
+
+import React from 'react';
+
 function App(){
   return(
-    <div id='app'>
+    <div>
       <style jsx global>{`
           *:not(p){
             font-family: helvetica;
@@ -23,11 +22,9 @@ function App(){
         `}
       </style>
       <Header/>
-      <Story/>
-      <Slogan/>
-      <Content/>
       <Switch>
-        <Route exact path='/allkegs' component={KegList} />
+        <Route exact path='/' component={LandingPage}/>
+        <Route path='/allkegs' component={KegList}/>
       </Switch>
       <Footer/>
     </div>

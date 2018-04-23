@@ -10,8 +10,7 @@ const styles = {
     float: 'right',
     width: '280px',
     margin: '10px 15px 15px 15px',
-    borderTop: '1px solid black',
-    borderLeft: '1px solid black'
+    border: '1px solid black'
   }
 }
 

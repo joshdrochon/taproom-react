@@ -8,12 +8,12 @@ import React from 'react';
 $(document).ready(function(){
 
   $(window).scroll(function(){
-    if ($(window).scrollTop() > 300){
+    if ($(window).scrollTop() >= 300){
       $('#navbar').addClass('navbar-fixed');
       //removes content shift on navbar-fixed
       $('#header').addClass('margin-correct');
     }
-    if ($(window).scrollTop() < 301){
+    if ($(window).scrollTop() <= 301){
       $('#navbar').removeClass('navbar-fixed');
       $('#header').removeClass('margin-correct');
     }
