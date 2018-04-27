@@ -28,16 +28,16 @@ function App(){
     <div>
       <style jsx global>{`
           html body {
-            width: !important 90%;
+            width: 100%;
             overflow-x: hidden;
             background-color: #F0EDE5;
           }
           #container-main{
             max-width: 100%;
-            border: 5px solid red;
           }
           *:not(p){
             font-family: helvetica;
+            font-weight: lighter;
             padding: 0px;
             margin: 0px;
           }
