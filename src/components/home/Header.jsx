@@ -71,11 +71,11 @@ function Header(){
       </style>
       <div style={styles.header} id='header'></div>
       <div id='navbar'>
-        <div><a href='#'>Home</a></div>
-        <div><Link to='/allkegs'>Brewer's List</Link></div>
-        <div><a href='#'>Tap Room</a></div>
-        <div><a href='#'>Blog</a></div>
-        <div><a href='#'>Contact</a></div>
+        <Link to='/'><div>Home</div></Link>
+        <Link to='/allkegs'><div>Brewer's List</div></Link>
+        <Link to='/taproom'><div>Tap Room</div></Link>
+        <Link to='/blog'><div>Blog</div></Link>
+        <Link to='/contact'><div>Contact</div></Link>
       </div>
     </div>
 

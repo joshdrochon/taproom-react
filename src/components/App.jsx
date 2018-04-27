@@ -3,6 +3,9 @@ import LandingPage from './LandingPage';
 import Header from './home/Header';
 import Footer from './home/Footer';
 import KegList from './keg/KegList';
+import Contact from './contact/Contact';
+import TapRoom from './taproom/TapRoom';
+import Blog from './blog/Blog';
 
 
 import React from 'react';
@@ -25,6 +28,9 @@ function App(){
       <Switch>
         <Route exact path='/' component={LandingPage}/>
         <Route path='/allkegs' component={KegList}/>
+        <Route path='/contact' component={Contact}/>
+        <Route path='/taproom' component={TapRoom}/>
+        <Route path='/blog' component={Blog}/>
       </Switch>
       <Footer/>
     </div>
