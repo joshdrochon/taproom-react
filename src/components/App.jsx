@@ -11,28 +11,49 @@ import Blog from './blog/Blog';
 import React from 'react';
 
 function App(){
+
+  let docWidth = document.documentElement.offsetWidth;
+
+  [].forEach.call(
+  document.querySelectorAll('*'),
+    function(element) {
+      if (element.offsetWidth < docWidth) {
+        console.log(element);
+      }else{
+        console.log('nothing to report');
+      }
+    }
+  );
   return(
     <div>
       <style jsx global>{`
+          html body {
+            width: !important 90%;
+            overflow-x: hidden;
+            background-color: #F0EDE5;
+          }
+          #container-main{
+            max-width: 100%;
+            border: 5px solid red;
+          }
           *:not(p){
             font-family: helvetica;
             padding: 0px;
             margin: 0px;
           }
-          body{
-            background-color: #F0EDE5;
-          }
         `}
       </style>
-      <Header/>
-      <Switch>
-        <Route exact path='/' component={LandingPage}/>
-        <Route path='/allkegs' component={KegList}/>
-        <Route path='/contact' component={Contact}/>
-        <Route path='/taproom' component={TapRoom}/>
-        <Route path='/blog' component={Blog}/>
-      </Switch>
-      <Footer/>
+      <div id='container-main'>
+        <Header/>
+        <Switch>
+          <Route exact path='/' component={LandingPage}/>
+          <Route path='/allkegs' component={KegList}/>
+          <Route path='/contact' component={Contact}/>
+          <Route path='/taproom' component={TapRoom}/>
+          <Route path='/blog' component={Blog}/>
+        </Switch>
+        <Footer/>
+      </div>
     </div>
   );
 }

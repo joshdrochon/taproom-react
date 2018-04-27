@@ -1,9 +1,8 @@
+
+import React from 'react';
 import { Link } from 'react-router-dom';
 import tapHandles from '../../assets/images/taphandles.jpg';
 import $ from 'jquery';
-
-
-import React from 'react';
 
 $(document).ready(function(){
 
