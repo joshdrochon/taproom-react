@@ -6,56 +6,104 @@ import KegList from './keg/KegList';
 import Contact from './contact/Contact';
 import TapRoom from './taproom/TapRoom';
 import Blog from './blog/Blog';
-
+import NewKegControl from './admin/NewKegControl';
 
 import React from 'react';
+import $ from 'jquery';
 
-function App(){
+$(document).ready(function(){
 
-  let docWidth = document.documentElement.offsetWidth;
+  $(window).scroll(function(){
+    if ($(window).scrollTop() >= 300){
+      $('#navbar').addClass('navbar-fixed');
+      $('#header').addClass('margin-correct');
+      //removes content shift on navbar-fixed
+      $('#keg-list-container').first().addClass('margin-correct-top');
 
-  [].forEach.call(
-  document.querySelectorAll('*'),
-    function(element) {
-      if (element.offsetWidth < docWidth) {
-        console.log(element);
-      }else{
-        console.log('nothing to report');
-      }
+
     }
-  );
-  return(
-    <div>
-      <style jsx global>{`
-          html body {
-            width: 100%;
-            overflow-x: hidden;
-            background-color: #F0EDE5;
-          }
-          #container-main{
-            max-width: 100%;
-          }
-          *:not(p){
-            font-family: helvetica;
-            font-weight: lighter;
-            padding: 0px;
-            margin: 0px;
-          }
-        `}
-      </style>
-      <div id='container-main'>
-        <Header/>
-        <Switch>
-          <Route exact path='/' component={LandingPage}/>
-          <Route path='/allkegs' component={KegList}/>
+    if ($(window).scrollTop() <= 301){
+      $('#navbar').removeClass('navbar-fixed');
+      $('#header').removeClass('margin-correct');
+
+      $('#keg-list-container').first().removeClass('margin-correct-top');
+
+    }
+  });
+});
+
+class App extends React.Component(){
+
+  constructor(props){
+    super(props);
+    this.state = {
+      masterKegList: []
+    };
+    this.handleAddingNewKegToList = this.handleAddingNewKegToList.bind(this);
+  }
+
+  handleAddingNewKegToList(newKeg){
+    let newMasterKegList = this.state.newMasterKegList.slice();
+    newMasterTicketList.push(newKeg);
+    this.setState({masterKegList: newMasterKegList});
+  }
+
+  render(){
+    return(
+      <div>
+        <style jsx global>{`
+            html body {
+              width: 100%;
+              overflow-x: hidden;
+              background-color: #F0EDE5;
+              padding: 0px;
+              margin: 0px;
+            }
+            #container-main{
+              max-width: 100%;
+            }
+            #container-main *{
+              font-family: helvetica;
+              font-weight: lighter;
+            }
+            .navbar-fixed{
+              top: 0;
+              z-index: 100;
+              position: fixed;
+            }
+            .margin-correct{
+              margin-bottom: 70px;
+            }
+            .margin-correct-top{
+              margin-top: 70px;
+              border: 1px solid transparent;
+            }
+          `}
+        </style>
+        <div id='container-main'>
+          <Header/>
+          <Switch>
+            <Route exact path='/' component={LandingPage}/>
+
+          <Route
+              path='/allkegs'
+              render={()=><TicketList ticketList={this.state.masterTicketList} />}
+          />
+
+          <Route
+              path='/newkeg'
+              render={()=><NewKegControl onNewKegCreation={this.handleAddingNewKegToList} />}
+          />
+
           <Route path='/contact' component={Contact}/>
-          <Route path='/taproom' component={TapRoom}/>
-          <Route path='/blog' component={Blog}/>
-        </Switch>
-        <Footer/>
+            <Route path='/taproom' component={TapRoom}/>
+            <Route path='/blog' component={Blog}/>
+          </Switch>
+          <Footer/>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default App;

@@ -1,23 +1,6 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import tapHandles from '../../assets/images/taphandles.jpg';
-import $ from 'jquery';
-
-$(document).ready(function(){
-
-  $(window).scroll(function(){
-    if ($(window).scrollTop() >= 300){
-      $('#navbar').addClass('navbar-fixed');
-      //removes content shift on navbar-fixed
-      $('#header').addClass('margin-correct');
-    }
-    if ($(window).scrollTop() <= 301){
-      $('#navbar').removeClass('navbar-fixed');
-      $('#header').removeClass('margin-correct');
-    }
-  });
-});
 
 const styles = {
   header: {
@@ -57,14 +40,6 @@ function Header(){
             text-decoration: none;
             font-size: 24px;
             line-height: 70px;
-          }
-          .navbar-fixed{
-            top: 0;
-            z-index: 100;
-            position: fixed;
-          }
-          .margin-correct{
-            margin-bottom: 70px;
           }
         `}
       </style>

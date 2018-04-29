@@ -1,23 +1,24 @@
 import React from 'react';
+import { getFunName } from './../../helpers';
 
 const Form = () => {
   return(
     <div id='contact-form'>
-      <style jsx>
-      {`
+      <style jsx>{`
         #contact-form{
           margin: auto;
           margin-top: 310px;
           width: 450px;
           height: 600px;
           background-color: clear;
+          transform: skewY(1deg);
         }
         #contact-form *{
           font-family: 'Indie Flower', cursive;
+          letter-spacing: 1px;
         }
         #contact-form input{
           border: none;
-          border-bottom: 1px dotted black;
           background: transparent;
         }
         #submit-btn{
@@ -27,7 +28,7 @@ const Form = () => {
           border: none;
           display: block;
           margin: auto;
-          margin-top: 50px;
+          margin-top: 20px;
         }
         #submit-btn:hover{
           cursor: pointer;
@@ -36,14 +37,17 @@ const Form = () => {
         #comment-tag{
           width: max-content;
           margin: auto;
-          margin-bottom: 12px;
         }
         #comment-field{
           width: 100%;
-          height: 200px;
+          height: 250px;
           background: none;
-          border:none;
-          box-shadow: inset 0 0 10px gray;
+          font-size: 24px;
+          border: none;
+          resize: none;
+        }
+        #comment-field:focus{
+          outline: none;
         }
         .input-label{
           display:block;
@@ -56,6 +60,7 @@ const Form = () => {
         .input-label input{
           font-size: 32px;
           color: #202020;
+          width:72%;
         }
         .input-label input:focus{
           outline: none;
@@ -63,10 +68,10 @@ const Form = () => {
       `}
       </style>
       <form id='form'>
-        <span className='input-label'><label>Firstname: </label><input maxLength='20' type='text' required/></span>
-        <span className='input-label'><label>Lastname: </label><input maxLength='20' type='text' required /></span>
+        <span className='input-label'><label>Firstname: </label><input maxLength='17' type='text' required/></span>
+        <span className='input-label'><label>Lastname: </label><input maxLength='17' type='text' required /></span>
         <span className='input-label'><label>Email: </label><input maxLength='22' type='email' required /></span>
-        <h2 id='comment-tag'>Drop a comment</h2><textarea id='comment-field'></textarea>
+        <h1 id='comment-tag'>Drop a comment</h1><textarea id='comment-field' placeholder={getFunName()}></textarea>
         <button id='submit-btn' type='submit'>Get in touch!</button>
       </form>
     </div>
