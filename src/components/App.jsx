@@ -32,7 +32,7 @@ $(document).ready(function(){
   });
 });
 
-class App extends React.Component(){
+class App extends React.Component{
 
   constructor(props){
     super(props);
@@ -43,8 +43,8 @@ class App extends React.Component(){
   }
 
   handleAddingNewKegToList(newKeg){
-    let newMasterKegList = this.state.newMasterKegList.slice();
-    newMasterTicketList.push(newKeg);
+    let newMasterKegList = this.state.masterKegList.slice();
+    newMasterKegList.push(newKeg);
     this.setState({masterKegList: newMasterKegList});
   }
 
@@ -87,7 +87,7 @@ class App extends React.Component(){
 
           <Route
               path='/allkegs'
-              render={()=><TicketList ticketList={this.state.masterTicketList} />}
+              render={()=><KegList kegList={this.state.masterKegList} />}
           />
 
           <Route

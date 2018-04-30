@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function NewKegForm(){
+function NewKegForm(props){
   let name = null;
   let size = null;
   let price = null;

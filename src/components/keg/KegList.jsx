@@ -15,7 +15,7 @@ import PropTypes from 'prop-types';
 //   {name: 'Indian Pale Ale', size: 'Full barrel', price: '$72.99'}
 // ];
 
-function KegList(){
+function KegList(props){
   return(
     <div id='keg-list-container'>
       <style jsx>{`
@@ -24,7 +24,7 @@ function KegList(){
         }
       `}
       </style>
-      {props.keglist.map((keg, index)=>
+      {props.kegList.map((keg, index)=>
         <Keg
           name={keg.name}
           size={keg.size}
